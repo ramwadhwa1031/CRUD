@@ -1,0 +1,50 @@
+<!--<html>
+    <head>
+    </head>
+    <body>
+            <h1>{{object.name}}</h1>
+            <h2>{{object.email}}</h2>
+            <h3>{{object.phone}}</h3>
+    </body>
+</html>-->
+
+
+<html>
+    <head>
+        <style>
+            .one{
+                height:100px;
+                width:25%
+                margin :0 auto;
+                border:2px solid;
+                float:left;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="one"id="one"></div>
+        <div class="one" id="two"></div>
+        <div class="one" id="three"></div>
+        <div class="one"id="four"></div>
+        <div class="one" id="five"></div>
+
+    </body>
+</html>
+
+<!-- JS for adding removing displaying-->
+<script>
+    var name=[]
+    function add(){
+        a=prompt("enter name you like to add in array")
+        name.push(a)
+    }
+    function removeName(){
+        b=prompt("enter name you want to remove?")
+        index=name.indexOf(b)
+        name.splice(index,1)
+    }
+    function display(){
+        console.log(name)
+    }
+
+</script>
