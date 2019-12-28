@@ -1,0 +1,46 @@
+{% extends  "satsangi_register/base.html" %}
+ 
+{% block content%}
+<table class="table table-borderless">
+    <thead>
+        <th>Name</th>
+        <th>Phone No</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Position</th>
+        <th>Job</th>
+        <th>
+            <a href="{% url 'employee_insert' %}" class="btn btn-outline-success">
+                <i class="fas fa-plus"></i> Add New
+            </a>
+        </th>
+    </thead>
+    <tbody>
+        {% for e in employee_list %}
+        <tr>
+            <td>{{e.fullname}}</td>
+            <td>{{e.contact}}</td>
+            <td>{{e.address}}</td>
+            <td>{{e.city}}</td>
+            <td>{{e.state}}</td>
+            <td>{{e.position}}</td>
+            <td>{{e.job}}</td>
+            <td>
+                <a href="{% url 'employee_update' e.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                </a>
+                <form action="{% url 'employee_delete' e.id %}" method="POST" class="d-inline">
+                    {%csrf_token %}
+                    <button type="submit" class="btn">
+                        <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                    </button>
+
+                </form>
+            </td>
+        </tr>
+        {%endfor%}
+    </tbody>
+
+</table>
+{% endblock content%}

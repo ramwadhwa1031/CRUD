@@ -14,7 +14,10 @@
             {%csrf_token%}
             <input type="hidden" name="next" value="{{next}}"/>
             <p><input type="submit" value="login"></p>
+
         </form>
+        <p><a href="{% url 'password_reset' %}">Forgot your password</a></p>
+        <p>Please Click here to <a href='{% url "register" %}'>Register </a></p>
 
     </div>    
 
